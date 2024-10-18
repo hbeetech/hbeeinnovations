@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - HBEE Innovations</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="favicon/black bg.png" type="image/x-icon">
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      display: flex;
+      flex-direction: column; /* Changed to column to fit navbar */
+      background-color: #000;
+    }
+
+    nav {
+      background-color: none; /* Background color for navbar */
+      padding: 30px; /* Increased padding for better aesthetics */
+      display: flex;
+      justify-content: center; /* Center align the navigation items */
+      align-items: center;
+      position: relative;
+      z-index: 1000; /* To keep navbar on top */
+    }
+
+    .logo img {
+      width: 100px; /* Logo size */
+      height: auto;
+    }
+   .logo {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    section .contact .content .logo .inputBox input[type="submit"]:hover {
+      background: #f1f1f1;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 50px; /* Increased gap for better spacing */
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px; /* Increased padding for clickable area */
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background: #444; /* Background on hover */
+      border-radius: 4px; /* Rounded corners on hover */
+    }
+
+    section {
+      flex: 1; /* To make section take the remaining space */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .welcome-content {
+      color: #fff; /* Text color */
+      text-align: center; /* Center text */
+    }
+
+    /* Responsive Design for Mobile */
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column; /* Stack links vertically on mobile */
+        gap: 10px; /* Reduced gap for vertical layout */
+      }
+
+      .nav-links li a {
+        padding: 8px 12px; /* Adjust padding for mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo/1.png" alt="Logo">
+              </a>
+        </div>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  
+</body>
+</html>
