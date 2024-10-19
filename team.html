@@ -86,11 +86,15 @@
       color: #ccc;
     }
 
-    /* For Responsive Design */
-    @media (max-width: 900px) {
-      .team-container {
-        flex-direction: column;
-        gap: 30px;
+    /* Responsive Design for Mobile */
+    @media (max-width: 600px) {
+      .team-section {
+        flex-direction: column; /* Stack links vertically on mobile */
+        gap: 10px; /* Reduced gap for vertical layout */
+      }
+
+      .team-section li a {
+        padding: 8px 12px; /* Adjust padding for mobile */
       }
     }
   </style>
