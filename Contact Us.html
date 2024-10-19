@@ -22,7 +22,6 @@
       align-items: center;
       background-color: #000;
     }
-
     section {
       position: absolute;
       width: 100vw;
@@ -75,6 +74,9 @@
       position: relative;
       width: 100%;
     }
+    .inputBox input[type="text"] {
+  text-transform: capitalize;
+}
 
     section .contact .content .form .inputBox input,
     section .contact .content .form .inputBox textarea {
@@ -396,6 +398,11 @@
         <span></span>
     <div class="contact">
       <div class="content">
+        <h1 style="text-align: center;">   
+          <a href="index.html">
+          <img src="logo/3.png" alt="Logo" style="width: 50%; height: auto;">
+          </a>
+        </h1>
         <h2>Contact Us</h2>
         <div class="form">
           <div class="inputBox">
@@ -405,7 +412,7 @@
             <input type="email" required placeholder="Your Email">
           </div>
           <div class="inputBox">
-            <textarea required placeholder="Your Message"></textarea>
+            <textarea required placeholder="Message"></textarea>
           </div>
           <div class="inputBox">
             <input type="submit" value="Send Message">
