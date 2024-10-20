@@ -82,11 +82,29 @@
     @media (max-width: 600px) {
       .nav-links {
         flex-direction: column; /* Stack links vertically on mobile */
-        gap: 10px; /* Reduced gap for vertical layout */
+        gap: 15px; /* Reduced gap for vertical layout */
+        align-items: center;
       }
-
+      .nav-links li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      
       .nav-links li a {
-        padding: 8px 12px; /* Adjust padding for mobile */
+        display: block;
+        height: 80%;
+        background-color: #ffffff;
+        color: #0a0a0a;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+      .nav-links li a:hover {
+        background-color: #1285a2;
+        color: #fff;
       }
     }
   </style>
@@ -100,6 +118,13 @@
         </div>
   <!-- Navigation Bar -->
   <nav>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+    
     <ul class="nav-links">
       <li><a href="about us.html">About Us</a></li>
       <li><a href="team.html">Team</a></li>
