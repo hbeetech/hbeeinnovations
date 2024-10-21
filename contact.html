@@ -94,6 +94,31 @@
     .inputBox input[type="submit"]:hover {
       background: #f1f1f1;
     }
+    footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;               /* White text for contrast */
+    text-align: center;          /* Center align text */
+    padding: 10px 0;            /* Padding for spacing */
+    font-family: 'Quicksand', sans-serif; /* Same font as the rest of the page */
+    z-index: 1000;              /* Ensure it stays on top of other content */
+    }
+
+    footer p {
+    margin: 0;                  /* Remove default margin */
+    font-size: 14px;            /* Adjust font size as needed */
+    }
+
+    footer a {
+    color: white;               /* Make links white */
+    text-decoration: none;      /* Remove underline */
+    } 
+
+    footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    }
 
     /* Responsive Design */
     @media (max-width: 900px) {
@@ -116,7 +141,7 @@
       padding: 20px;
       text-align: center;
       position: fixed;
-      padding-top:1%;   /* whatsapp button position control*/   
+      padding-top:100%;   /* whatsapp button position control*/   
       align-self: baseline;
     }
 
@@ -147,7 +172,7 @@
     .whatsapp-chat {
       background-color: #25d366;
       color: white;
-      padding: 10px 20px;
+      padding: 5px 10px;
       border-radius: 5px;
       text-decoration: none;
       font-size: 18px;
