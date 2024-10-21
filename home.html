@@ -1,140 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome - HBEE Innovations</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" href="favicon/black bg.png" type="image/x-icon">
-  <style>
-    /* Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Quicksand', sans-serif;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
 
-    body, html {
-      height: 100%;
-      display: flex;
-      flex-direction: column; /* Changed to column to fit navbar */
-      background-color: #000;
-    }
+        body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;        /* Centers content vertically */
+    flex-direction: column;    /* Keeps content stacked vertically */
+    background-color: #000;
+}
 
-    nav {
-      background-color: none; /* Background color for navbar */
-      padding: 30px; /* Increased padding for better aesthetics */
-      display: flex;
-      justify-content: center; /* Center align the navigation items */
-      align-items: center;
-      position: relative;
-      z-index: 1000; /* To keep navbar on top */
-    }
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;  /* Spacing between logo and hamburger menu */
+}
 
-    .logo img {
-      width: 150px; /* Logo size */
-      height: auto;
-    }
-   .logo {
-      width: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.logo img {
+    width: 4.8cm;  /* Adjust logo size */
+    height: auto;
+    padding: 1em;
+}
 
-    section .contact .content .logo .inputBox input[type="submit"]:hover {
-      background: #f1f1f1;
-    }
+.hamburger {
+    display: none;  /* Hide the hamburger menu by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;  /* Space between logo and hamburger */
+}
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 50px; /* Increased gap for better spacing */
-    }
+.hamburger div {
+    width: 35px;   /* Width of each bar in the hamburger menu */
+    height: 4px;   /* Height of each bar */
+    background-color: white; /* Color of the hamburger bars */
+    margin: 5px 0; /* Spacing between the bars */
+    transition: 0.3s; /* Optional: for smooth animation */
+}
 
-    .nav-links li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 15px; /* Increased padding for clickable area */
-      transition: background 0.3s;
-    }
+        nav {
+            width: 100%; /* Takes up the entire width */
+            display: flex;
+            justify-content: center; /* Centers the navbar */
+            background-color: none;  /* Optional: adjust background if needed */
+            padding: 30px;  /* Optional: add padding around navbar */
+        }
 
-    .nav-links li a:hover {
-      background: #444; /* Background on hover */
-      border-radius: 4px; /* Rounded corners on hover */
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 50px;  /* Spacing between navigation links */
+            justify-content: center;
+        }
 
-    section {
-      flex: 1; /* To make section take the remaining space */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+        .nav-links li a {
+            display: block;
+            background-color: #ffffff;
+            color: #0a0a0a;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
 
-    .welcome-content {
-      color: #fff; /* Text color */
-      text-align: center; /* Center text */
-    }
+        .nav-links li a:hover {
+            background-color: #252525;
+            color: #fff;
+        }
+        /* Mobile View */
+        @media (max-width: 600px) {
+                  nav {
+                display: flex;
+                flex-direction: column;   /* Stack links vertically */
+                justify-content: center;  /* Center content vertically */
+                align-items: center;      /* Center content horizontally */
+                height: 0vh;            /* Make the nav take full screen height */
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 250px;
+                right: 0;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-links li {
+                width: 100%;              /* Full width for each list item */
+                display: flex;
+                justify-content: center;  /* Center the link inside the list item */
+            }
 
-    /* Responsive Design for Mobile */
-    @media (max-width: 600px) {
-      .nav-links {
-        flex-direction: column; /* Stack links vertically on mobile */
-        gap: 15px; /* Reduced gap for vertical layout */
-        align-items: center;
-      }
-      .nav-links li {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-      
-      .nav-links li a {
-        display: block;
-        height: 80%;
-        background-color: #ffffff;
-        color: #0a0a0a;
-        padding: 15px;
-        width: 100%;
-        text-align: center;
-        border-radius: 5px;
-        transition: background 0.3s;
-      }
-      .nav-links li a:hover {
-        background-color: #1285a2;
-        color: #fff;
-      }
+            .nav-links li a {
+                padding: 10px;
+                width: 50%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        /* Show hamburger menu on mobile (max-width: 600px) */
+  @media (max-width: 600px) {
+    .hamburger {
+        display: flex; /* Make it visible on small screens */
     }
-  </style>
+}
+
+        /* Toggle animation for hamburger */
+        .hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+    </style>
 </head>
 <body>
 
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo/3.png" alt="Logo">
-              </a>
-        </div>
-  <!-- Navigation Bar -->
-  <nav>
-        <!-- Hamburger Menu Icon -->
-        <div class="hamburger" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-    
-    <ul class="nav-links">
-      <li><a href="about us.html">About Us</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="index.html">Sign in</a></li>
-    </ul>
-  </nav>
-  
+    <!-- Logo Section -->
+    <section class="logo">
+        <img src="logo/3.png" alt="Logo">
+    </section>
+
+    <!-- Navigation Bar -->
+    <section>
+        <nav>
+            <!-- Hamburger Menu (Visible on Mobile) -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="index.html">Sign in</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- JavaScript to toggle menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        }
+    </script>
+
 </body>
 </html>
