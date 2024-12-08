@@ -1,137 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HBEE Innovations | Services</title>
-  <link rel="icon" href="favicon/1.png" type="image/x-icon">
-  <style>
-    /* Basic Reset and Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-    }
+    <meta charset="utf-8">
+    <title>HBEE INNOVATIONS | Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    /* Full-page Background Setup */
-    body, html {
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #000; /* Background color */
-      position: relative;
-    }
+    <!-- Favicon -->
+    <link href="img/HBEE Favicon.png" rel="icon">
 
-    /* Content Wrapper */
-    .content {
-      padding: 2pc;
-      position: relative;
-      z-index: 1; /* Ensures content stays on top */
-      color: #fff; /* Text color for content */
-      text-align: center;
-    }
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
 
-    .content h2 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    /* Placeholder for Logo */
-    .logo img {
-      width: 150px;
-      height: auto;
-    }
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    .logo {
-      margin-bottom: 30px; /* Space between logo and content */
-    }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    /* Flexible Container for Future Content */
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      width: 100%;
-    }
-
-
-    /* Placeholder for Items (e.g., team members, content blocks) */
-    .item {
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 300px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .item img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-
-    .item h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .item p {
-      font-size: 0.9em;
-      color: #ccc;
-    }
-
-    /* Responsive Styles for Mobile */
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column; /* Stack items vertically on mobile */
-        gap: 20px; /* Adjusted gap for smaller screens */
-      }
-
-      .item h3 {
-        font-size: 1.2em; /* Adjusted heading size for mobile */
-      }
-    }
-  </style>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
 </head>
 
 <body>
-  <div class="content">
-    <!-- Logo (Optional) -->
-    <div class="logo">
-      <a href="home.html">
-        <img src="logo/3.png" alt="Logo">
-      </a>
-    </div>
-
-    <!-- Placeholder Heading -->
-    <h2>Our Services</h2>
-
-    <!-- Container for dynamic content -->
-    <div class="container">
-      <!-- Example Item (Replace or Add Classes) -->
-      <div class="item">
-        <img src="Images/services/1.png" alt="">
-        <h3>Agricultural</h3>
-        <p>Production and supply of high quality agriculture inputs</p>
-      </div>
-      <div class="item">
-        <img src="Images/services/2.png" alt="Team Member 2">
-        <h3>Agri. consultancy service</h3>
-        <p>Strategic advice and solutions for optimizing agricultural processes and embracing sustainable practices.</p>
-      </div>
-      <div class="item">
-        <img src="Images/services/3.png" alt="Team Member 3">
-        <h3>Technology Solutions</h3>
-        <p>Tailored tech solutions, from digital platforms to data analytics, enhancing operational efficiency for agricultural enterprises.</p>
-      </div>
-
-      <!-- Add more items as needed -->
+    <!-- Spinner Start -->
+  <!-- Spinner
+  <div id="spinner">
+    <div class="spinner">
+      <div class="spinner-circle"></div>
+      <div class="spinner-text">Loading...</div>
     </div>
   </div>
+
+  <div id="content" style="display: none;">
+    <h1>Welcome to Your Page!</h1>
+    <p>The content has loaded successfully.</p>
+  </div>
+
+     Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="career.html">Career</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="terms.html">Terms</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="policy.html">Privacy</a></li>
+                </ol>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <small>Follow us:</small>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn-square text-primary border-end rounded-0" href="https://www.facebook.com/profile.php?id=61569982450220"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+        <!-- Brand & Contact Start -->
+        <div class="container-fluid py-4 px-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="row align-items-center top-bar">
+                <div class="col-lg-4 col-md-12 text-center text-lg-start d-flex align-items-center">
+                    <a href="index.html">
+                        <img src="img/HB logo and Line.png" alt="Logo" style="width: 300px; height: auto;">
+                    </a>
+                </div>
+                <div class="col-lg-8 col-md-7 d-none d-lg-block">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                                    <i class="far fa-clock text-primary"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <p class="mb-2">Opening Hour</p>
+                                    <h6 class="mb-0">Mon - Fri, 9:30 - 18:30</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                                    <i class="fa fa-phone text-primary"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <p class="mb-2">Call Us</p>
+                                    <h6 class="mb-0"><a href="tel:+918310099233">
+                                        <span>
+                                          +91 83100 99233
+                                        </span>
+                                      </a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                                    <i class="far fa-envelope text-primary"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <p class="mb-2">Email Us</p>
+                                    <h6 class="mb-0">
+                                      <a href="mailto:support@hbeei.com">
+                                        support@hbeei.com
+                                      </a>
+                                    </h6>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Brand & Contact End -->
+
+        
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="#" class="navbar-brand ms-3 d-lg-none">MENU</a>
+        <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav me-auto p-3 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="services.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                        <a href="service.html" class="dropdown-item">Service Grid</a>
+                        <a href="service-detail.html" class="dropdown-item">Service Detail</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
+                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                        <a href="project.html" class="dropdown-item">Project Grid</a>
+                        <a href="project-detail.html" class="dropdown-item">Project Detail</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blogs</a>
+                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                        <a href="blog-detail.html" class="dropdown-item">Blog Detail</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                        <a href="feature.html" class="dropdown-item">Features</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                        <a href="contact.html" class="dropdown-item">Contact Us</a>
+                    </div>
+                </div>
+                <a href="element.html" class="nav-item nav-link">Store</a>
+            </div>
+            <a href="" class="btn btn-sm btn-outline-light rounded-pill border-2 py-2 px-4 d-none d-lg-block">Cantact Us</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+        
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+                <h1 class="display-6 mb-4">We Focuse On Making The Best In All Sectors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/HBCons-1.jpg" alt="">
+                        <h4 class="mb-0">Agriculture Production and Input Supply</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/HBCons-2.jpg" alt="">
+                        <h4 class="mb-0">Scintific & Innovative Agriculture Solution</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/HBCons-3.jpg" alt="">
+                        <h4 class="mb-0">Creative & Innovative AgriTech Solution</h4>
+                    </a>
+                </div>
+
+                      <!-- Add more Service here 
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-4.jpg" alt="">
+                        <h4 class="mb-0">Social Marketing</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-5.jpg" alt="">
+                        <h4 class="mb-0">Email Marketing</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-6.jpg" alt="">
+                        <h4 class="mb-0">PPC Advertising</h4>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> <a href="https://maps.app.goo.gl/jKadhvxzPRRwE1pW6" target="_blank" style="text-decoration: none; color: #2874a6;">
+                        #146/A/C, Aladamma Devi Road, Basapur, Haveri (Tq & Dist.), Karnataka-581108, India
+                    </a></p>
+                  <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+918310099233"> +91 83100 99233</a> </p>  
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:support@hbeei.com" class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">support@hbeei.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="services.html">Our Services</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="mailto:support@hbeei.com">Support</a>
+                </div>
+               
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Gallery</h5>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/HBP-1.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/HBP-2.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/HBP-3.png" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/HBP-4.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/HBP-5.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/HBP-6.jpg" alt="Image">
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Subscribe to our email newsletter to get current information on our services. </p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">www.hbeei.com</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="https://hbeei.com">HBEE INNOVATIONS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/wow/wow.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/easing/easing.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/waypoints/waypoints.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/counterup/counterup.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="lib/lightbox/js/lightbox.min.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
 </body>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js" type="45afc00d7fba06a1c0d076cc-text/javascript"></script>
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="45afc00d7fba06a1c0d076cc-|49" defer></script>
+
+</body>
+
 </html>
