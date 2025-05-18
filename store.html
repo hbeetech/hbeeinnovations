@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store | HBEE Innovations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card { min-height: 100%; }
+        .product-img { object-fit: cover; height: 220px; width: 100%; }
+        .section-title {
+            background: #fff;
+            color: #2874a6;
+            display: inline-block;
+            padding: 0.25em 1em;
+            border-radius: 0.5em;
+            font-weight: 600;
+            margin-bottom: 1em;
+        }
+        .store-hero {
+            background: linear-gradient(90deg, #2874a6 0%, #6dd5ed 100%);
+            color: #fff;
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-lg-0 px-lg-5">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">HBEE Innovations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="store.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Store Hero Section (replaces carousel) -->
+    <div class="store-hero">
+        <h1 class="display-5 fw-bold mb-2">Welcome to Our Store</h1>
+        <p class="lead mb-0">Discover our best natural products and order online</p>
+    </div>
+
+    <!-- Product Catalog Section -->
+    <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h6 class="section-title">Our Products</h6>
+            <h2 class="mb-4">Shop Quality &amp; Purity</h2>
+        </div>
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card product-card h-100 shadow-sm">
+                    <img src="img/product1.jpg" class="card-img-top product-img" alt="Organic Honey">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Organic Honey</h5>
+                        <p class="card-text">Pure, natural honey sourced from local farms.</p>
+                        <form class="mt-auto">
+                            <div class="mb-2">
+                                <label for="product1-select" class="form-label mb-1">Select Size</label>
+                                <select class="form-select" id="product1-select">
+                                    <option value="250g">250g - ₹150</option>
+                                    <option value="500g">500g - ₹280</option>
+                                    <option value="1kg">1kg - ₹500</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="product1-qty" class="form-label mb-1">Quantity</label>
+                                <input type="number" class="form-control" id="product1-qty" value="1" min="1">
+                            </div>
+                            <a href="https://buy.stripe.com/test_1234567890" target="_blank" class="btn btn-primary w-100">Buy Now</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card product-card h-100 shadow-sm">
+                    <img src="img/product2.jpg" class="card-img-top product-img" alt="Neem Soap">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Neem Soap</h5>
+                        <p class="card-text">Handmade neem soap for healthy skin.</p>
+                        <form class="mt-auto">
+                            <div class="mb-2">
+                                <label for="product2-select" class="form-label mb-1">Select Pack</label>
+                                <select class="form-select" id="product2-select">
+                                    <option value="1pc">1 pc - ₹60</option>
+                                    <option value="3pc">3 pcs - ₹170</option>
+                                    <option value="5pc">5 pcs - ₹270</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="product2-qty" class="form-label mb-1">Quantity</label>
+                                <input type="number" class="form-control" id="product2-qty" value="1" min="1">
+                            </div>
+                            <a href="https://buy.stripe.com/test_0987654321" target="_blank" class="btn btn-primary w-100">Buy Now</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card product-card h-100 shadow-sm">
+                    <img src="img/product3.jpg" class="card-img-top product-img" alt="Turmeric Powder">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Turmeric Powder</h5>
+                        <p class="card-text">High-quality turmeric powder for cooking and health.</p>
+                        <form class="mt-auto">
+                            <div class="mb-2">
+                                <label for="product3-select" class="form-label mb-1">Select Weight</label>
+                                <select class="form-select" id="product3-select">
+                                    <option value="100g">100g - ₹50</option>
+                                    <option value="250g">250g - ₹110</option>
+                                    <option value="500g">500g - ₹200</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="product3-qty" class="form-label mb-1">Quantity</label>
+                                <input type="number" class="form-control" id="product3-qty" value="1" min="1">
+                            </div>
+                            <a href="https://buy.stripe.com/test_abcdefg12345" target="_blank" class="btn btn-primary w-100">Buy Now</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container text-center">
+            &copy; 2025 HBEE Innovations. All rights reserved.
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
