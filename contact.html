@@ -134,8 +134,8 @@
                                 <div class="ps-3">
                                     <p class="mb-2">Email Us</p>
                                     <h6 class="mb-0">
-                                      <a href="mailto:support@hbeei.com">
-                                        support@hbeei.com
+                                      <a href="mailto:admin@hbeei.com">
+                                        admin@hbeei.com
                                       </a>
                                     </h6>
                                   </div>
@@ -197,6 +197,45 @@
     </nav>
     <!-- Navbar End -->
 
+    <!-- Contact Form Section -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="mb-3">Get in touch</h3>
+                        <p class="text-muted">Have a question or need a quote? Fill the form below and we'll get back to you within 24 hours.</p>
+                        <div id="formAlert" class="alert d-none" role="alert"></div>
+                        <form id="siteContactForm" class="row g-3" action="https://formspree.io/f/xyznqzjg" method="POST" accept-charset="UTF-8">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input id="c-name" name="name" class="form-control" type="text" placeholder="Your full name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone</label>
+                                <input id="c-phone" name="phone" class="form-control" type="tel" placeholder="+91 8XXXXXXXXX" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Email</label>
+                                <input id="c-email" name="_replyto" class="form-control" type="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Message / Query</label>
+                                <textarea id="c-message" name="message" class="form-control" rows="6" placeholder="Tell us about your requirement" required></textarea>
+                            </div>
+                            <div class="col-12 text-end">
+                                <input type="hidden" name="_subject" value="Website Inquiry from HBEE INNOVATIONS">
+                                <input type="hidden" name="_next" value="">
+                                <button id="c-submit" class="btn btn-primary">Send Message</button>
+                             </div>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -208,7 +247,7 @@
                         #146/A/C, Aladamma Devi Road, Basapur, Haveri (Tq & Dist.), Karnataka-581108, India
                     </a></p>
                   <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+918310099233"> +91 83100 99233</a> </p>  
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:support@hbeei.com" class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">support@hbeei.com</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:admin@hbeei.com" class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">admin@hbeei.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -223,7 +262,7 @@
                     <a class="btn btn-link" href="services.html">Our Services</a>
                     <a class="btn btn-link" href="terms.html">Terms & Condition</a>
                     <a class="btn btn-link" href="policy.html">policy</a>
-                    <a class="btn btn-link" href="mailto:support@hbeei.com">Support</a>
+                    <a class="btn btn-link" href="mailto:admin@hbeei.com">Support</a>
                 </div>
                
                 <div class="col-lg-3 col-md-6">
@@ -302,3 +341,51 @@
 </body>
 
 </html>
+
+<script>
+// Contact form client-side handler: basic validation; browser will submit the form via HTML POST to Formspree
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('siteContactForm');
+    if(!form) return;
+    function validEmail(e){ return /\S+@\S+\.\S+/.test(e); }
+    form.addEventListener('submit', function(ev){
+        const name = document.getElementById('c-name').value.trim();
+        const phone = document.getElementById('c-phone').value.trim();
+        const email = document.getElementById('c-email').value.trim();
+        const message = document.getElementById('c-message').value.trim();
+        if(!name || !phone || !email || !message){ ev.preventDefault(); alert('Please fill all fields.'); return; }
+        if(!validEmail(email)){ ev.preventDefault(); alert('Please provide a valid email.'); return; }
+        // Let the browser perform the POST to Formspree
+    });
+});
+</script>
+
+<script>
+// Use Formspree _next redirect to go to thank-you page. Set _next to absolute URL on submit.
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('siteContactForm');
+    const alertBox = document.getElementById('formAlert');
+    if(!form || !alertBox) return;
+
+    function showAlert(type, text){
+        alertBox.className = `alert alert-${type}`;
+        alertBox.textContent = text;
+        alertBox.classList.remove('d-none');
+    }
+
+    form.addEventListener('submit', function(ev){
+        // set absolute _next URL so Formspree redirects here after successful submission
+        const nextField = form.querySelector('input[name="_next"]');
+        // build absolute URL
+        const origin = window.location.origin || (window.location.protocol + '//' + window.location.host);
+        nextField.value = origin + '/thank-you.html';
+
+        // show sending state and disable submit to prevent duplicates
+        showAlert('info', 'Sending your message...');
+        const btn = document.getElementById('c-submit');
+        if(btn) btn.disabled = true;
+
+        // Let browser submit form normally; Formspree will redirect to _next on success
+    });
+});
+</script>

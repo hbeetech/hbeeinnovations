@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta name="google-site-verification" content="a1gTeDqTxL4UpnD6S760jfikJt132lz1FKjNOh60OWw" />
     <!-- Google Tag Manager -->
@@ -10,296 +9,366 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5CCGD9G2');</script>
     <!-- End Google Tag Manager -->
-    
+
     <meta charset="utf-8">
-    <title>HBEE INNOVATIONS</title>
+    <title>HBEE INNOVATIONS — Store</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
 
-
-    <!-- Favicon -->
+    <!-- Favicon + Fonts + Icons (kept from original) -->
     <link href="img/HBEE Favicon.png" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-</head>
-</head>
 
+    <style>
+        /* small local tweaks for the store layout */
+        .product-img { height: 220px; object-fit: cover; }
+        .section-title { display:inline-block; padding: .25rem .75rem; border-radius: .5rem; background:#fff; color:#2874a6; font-weight:600; }
+        .cart-badge { position:relative; top:-3px; }
+        .cart-item-qty { width:70px; }
+    </style>
+</head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CCGD9G2"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-     
-    <!-- Spinner Start -->
-  <!-- Spinner
-  <div id="spinner">
-    <div class="spinner">
-      <div class="spinner-circle"></div>
-      <div class="spinner-text">Loading...</div>
-    </div>
-  </div>
 
-  <div id="content" style="display: none;">
-    <h1>Welcome to Your Page!</h1>
-    <p>The content has loaded successfully.</p>
-  </div>
-
-     Spinner End -->
-
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row gx-0 align-items-center d-none d-lg-flex">
-            <div class="col-lg-6 px-5 text-start">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="career.html">Career</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="terms.html">Terms</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="policy.html">Privacy</a></li>
-                </ol>
-            </div>
-            <div class="col-lg-6 px-5 text-end">
-                <small>Follow us:</small>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn-square text-primary border-end rounded-0" href="https://www.facebook.com/profile.php?id=61569982450220" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn-square text-primary border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
+<!-- Topbar / Brand / Navbar (kept from original, trimmed content) -->
+<div class="container-fluid bg-light px-0">
+    <div class="row gx-0 align-items-center d-none d-lg-flex">
+        <div class="col-lg-6 px-5 text-start">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a class="small text-secondary" href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a class="small text-secondary" href="contact.html">Contact</a></li>
+            </ol>
+        </div>
+        <div class="col-lg-6 px-5 text-end">
+            <small>Follow us:</small>
+            <div class="h-100 d-inline-flex align-items-center">
+                <a class="btn-square text-primary border-end rounded-0" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn-square text-primary border-end rounded-0" href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
+</div>
 
-        <!-- Brand & Contact Start -->
-        <div class="container-fluid py-2 px-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row align-items-center top-bar">
-                <div class="col-lg-4 col-md-12 text-center text-lg-start d-flex align-items-center">
-                    <a href="index.html">
-                        <img src="img/HB logo and Line.png" alt="Logo" style="width: 300px; height: auto;">
-                    </a>
-                </div>
-                <div class="col-lg-8 col-md-7 d-none d-lg-block">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div class="flex-shrink-0 btn-lg-square border rounded-circle">
-                                    <i class="far fa-clock text-primary"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <p class="mb-2">Opening Hour</p>
-                                    <h6 class="mb-0">Mon - Fri, 9:30 - 18:30</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div class="flex-shrink-0 btn-lg-square border rounded-circle">
-                                    <i class="fa fa-phone text-primary"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <p class="mb-2">Call Us</p>
-                                    <h6 class="mb-0"><a href="tel:+918310099233">
-                                        <span>
-                                          +91 83100 99233
-                                        </span>
-                                      </a>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div class="flex-shrink-0 btn-lg-square border rounded-circle">
-                                    <i class="far fa-envelope text-primary"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <p class="mb-2">Email Us</p>
-                                    <h6 class="mb-0">
-                                      <a href="mailto:support@hbeei.com">
-                                        support@hbeei.com
-                                      </a>
-                                    </h6>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="container-fluid py-2 px-5">
+    <div class="row align-items-center top-bar">
+        <div class="col-lg-4 col-md-12 text-center text-lg-start d-flex align-items-center">
+            <a href="index.html"><img src="img/HB logo and Line.png" alt="Logo" style="width:300px; height:auto;"></a>
+        </div>
+        <div class="col-lg-8 d-none d-lg-block">
+            <div class="row">
+                <div class="col-4 text-end"><p class="mb-0">Mon - Fri, 9:30 - 18:30</p></div>
+                <div class="col-4 text-end"><p class="mb-0"><a href="tel:+918310099233">+91 83100 99233</a></p></div>
+                <div class="col-4 text-end"><p class="mb-0"><a href="mailto:support@hbeei.com">support@hbeei.com</a></p></div>
             </div>
         </div>
-        <!-- Brand & Contact End -->
+    </div>
+</div>
 
-        
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="#" class="navbar-brand ms-3 d-lg-none">MENU</a>
-        <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5">
+    <a class="navbar-brand d-lg-none" href="#">HBEE</a>
+    <div class="container">
+        <a class="navbar-brand d-none d-lg-block" href="index.html">HBEE Innovations</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav me-auto p-3 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <div class="nav-item dropdown">
-                    <a href="services.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-                        <a href="services.html" class="dropdown-item">Service Grid</a>
-                        <a href="service-detail.html" class="dropdown-item">Service Detail</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-                        <a href="project.html" class="dropdown-item">Project Grid</a>
-                        <a href="project-detail.html" class="dropdown-item">Project Detail</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blogs</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="blog-detail.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                        <a href="contact.html" class="dropdown-item">Contact Us</a>
-                    </div>
-                </div>
-                <a href="element.html" class="nav-item nav-link">Store</a>
-            </div>
-            <a href="contact.html" class="btn btn-sm btn-outline-light rounded-pill border-2 py-2 px-4 d-none d-lg-block">Cantact Us</a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-    <!-- Store Hero Section (replaces carousel) -->
-    
-        <div class="container-xxl py-2">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="section-title bg-white text-center text-primary px-3">Welcome to Our Store</h6>
-                <h5 class="display-7 mb-4">Discover our best natural products and order online</h5>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="store.html">Store</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-light me-2" id="viewCartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fa fa-shopping-cart"></i> Cart <span class="badge bg-danger cart-badge" id="cartCount">0</span>
+                </button>
+                <a href="contact.html" class="btn btn-sm btn-outline-light rounded-pill">Contact Us</a>
             </div>
         </div>
     </div>
-    <!-- Store Hero Section End -->
+</nav>
 
-    <!-- Product Catalog Section -->
-    <div class="container py-8">
-        <div class="row g-4">
-            <!-- Product 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card product-card h-100 shadow-sm">
-                    <img src="img/Mango.png" class="card-img-top product-img" alt="Organic Honey">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Organic Mango</h5>
-                        <p class="card-text">Pure, natural Mango sourced from local farms.</p>
-                        <form class="mt-auto">
-                            <div class="mb-2">
-                                <label for="product1-select" class="form-label mb-1">Select Size</label>
-                                <select class="form-select" id="product1-select">
-                                    <option value="250g">250g - ₹150</option>
-                                    <option value="500g">500g - ₹280</option>
-                                    <option value="1kg">1kg - ₹500</option>
-                                </select>
-                            </div>
-                            <div class="mb-2">
-                                <label for="product1-qty" class="form-label mb-1">Quantity</label>
-                                <input type="number" class="form-control" id="product1-qty" value="1" min="1">
-                            </div>
-                            <a href="https://buy.stripe.com/test_1234567890" target="_blank" class="btn btn-primary w-100">Buy Now</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Product 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card product-card h-100 shadow-sm">
-                    <img src="img/product2.jpg" class="card-img-top product-img" alt="Neem Soap">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Neem Soap</h5>
-                        <p class="card-text">Handmade neem soap for healthy skin.</p>
-                        <form class="mt-auto">
-                            <div class="mb-2">
-                                <label for="product2-select" class="form-label mb-1">Select Pack</label>
-                                <select class="form-select" id="product2-select">
-                                    <option value="1pc">1 pc - ₹60</option>
-                                    <option value="3pc">3 pcs - ₹170</option>
-                                    <option value="5pc">5 pcs - ₹270</option>
-                                </select>
-                            </div>
-                            <div class="mb-2">
-                                <label for="product2-qty" class="form-label mb-1">Quantity</label>
-                                <input type="number" class="form-control" id="product2-qty" value="1" min="1">
-                            </div>
-                            <a href="https://buy.stripe.com/test_0987654321" target="_blank" class="btn btn-primary w-100">Buy Now</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Product 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card product-card h-100 shadow-sm">
-                    <img src="img/product3.jpg" class="card-img-top product-img" alt="Turmeric Powder">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Turmeric Powder</h5>
-                        <p class="card-text">High-quality turmeric powder for cooking and health.</p>
-                        <form class="mt-auto">
-                            <div class="mb-2">
-                                <label for="product3-select" class="form-label mb-1">Select Weight</label>
-                                <select class="form-select" id="product3-select">
-                                    <option value="100g">100g - ₹50</option>
-                                    <option value="250g">250g - ₹110</option>
-                                    <option value="500g">500g - ₹200</option>
-                                </select>
-                            </div>
-                            <div class="mb-2">
-                                <label for="product3-qty" class="form-label mb-1">Quantity</label>
-                                <input type="number" class="form-control" id="product3-qty" value="1" min="1">
-                            </div>
-                            <a href="https://buy.stripe.com/test_abcdefg12345" target="_blank" class="btn btn-primary w-100">Buy Now</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<!-- Hero (replaces carousel) -->
+<div class="container-xxl py-4">
+    <div class="container text-center">
+        <h6 class="section-title">Welcome to Our Store</h6>
+        <h1 class="mt-3">Agriculture Chemicals & Inputs</h1>
+        <p class="lead">Seeds, fertilizers, crop protection, adjuvants — quality inputs for better yields.</p>
+    </div>
+</div>
+
+<!-- Filters + Products -->
+<div class="container py-4">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <select id="categoryFilter" class="form-select">
+                <option value="all">All Categories</option>
+                <option value="fertilizer">Fertilizers</option>
+                <option value="pesticide">Pesticides</option>
+                <option value="seeds">Seeds</option>
+                <option value="adjuvant">Adjuvants</option>
+            </select>
+        </div>
+        <div class="col-md-8 text-end">
+            <input id="searchInput" class="form-control d-inline-block w-50" placeholder="Search products...">
         </div>
     </div>
 
-    <!-- Footer Start -->
-    <footer class="bg-dark text-light py-3 mt-5">
-        <div class="container text-center">
-            &copy; 2025 HBEE Innovations. All rights reserved.
-        </div>
-    </footer>
-    <!-- Footer End -->
+    <div class="row g-4" id="productsRow">
+        <!-- products injected by JS -->
+    </div>
+</div>
 
-    <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fa fa-shopping-cart"></i> Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cartItems"></div>
+        <div class="mt-3 text-end">
+            <h5>Total: <span id="cartTotal">₹0</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="clearCartBtn" class="btn btn-secondary">Clear</button>
+        <button id="checkoutMailBtn" class="btn btn-primary">Checkout via Email</button>
+        <button id="checkoutLinkBtn" class="btn btn-success">Proceed to Payment Link</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2025 HBEE Innovations. All rights reserved.
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/*
+  Simple e‑commerce front-end:
+  - Products defined below (id, name, category, variants, price, image, paymentLink)
+  - Add to cart, cart persistence (localStorage), search & filter
+  - Buy Now opens product.paymentLink (placeholder). Checkout via email composes order to support@hbeei.com
+*/
+
+const PRODUCTS = [
+  {
+    id: 'fert-01',
+    name: 'NPK Granules 20-20-20',
+    category: 'fertilizer',
+    image: 'https://images.unsplash.com/photo-1587560699334-6b0b1f0e6f02?auto=format&fit=crop&w=800&q=80',
+    variants: [{key:'50kg', label:'50 kg', price: 2000},{key:'25kg', label:'25 kg', price: 1050}],
+    paymentLink: 'https://buy.stripe.com/test_fert01' // placeholder
+  },
+  {
+    id: 'pest-01',
+    name: 'CropGuard Insecticide (250ml)',
+    category: 'pesticide',
+    image: 'https://images.unsplash.com/photo-1581091012184-7a3d49b5f663?auto=format&fit=crop&w=800&q=80',
+    variants: [{key:'250ml', label:'250 ml', price: 350}],
+    paymentLink: 'https://buy.stripe.com/test_pest01'
+  },
+  {
+    id: 'seed-01',
+    name: 'Hybrid Maize Seeds (1kg)',
+    category: 'seeds',
+    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80',
+    variants: [{key:'1kg', label:'1 kg', price: 420}],
+    paymentLink: 'https://buy.stripe.com/test_seed01'
+  },
+  {
+    id: 'adj-01',
+    name: 'Spray Adjuvant (1L)',
+    category: 'adjuvant',
+    image: 'https://images.unsplash.com/photo-1524594154902-e4d9d5f8f2e0?auto=format&fit=crop&w=800&q=80',
+    variants: [{key:'1L', label:'1 L', price: 250}],
+    paymentLink: 'https://buy.stripe.com/test_adj01'
+  },
+  {
+    id: 'mango-01',
+    name: 'Organic Mango (Premium)',
+    category: 'seeds',
+    image: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80',
+    variants: [{key:'1kg', label:'1 kg', price: 180}],
+    paymentLink: 'https://buy.stripe.com/test_mango01'
+  }
+];
+
+const CART_KEY = 'hbeei_cart_v1';
+let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+
+function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartUI(); }
+function formatINR(n){ return '₹' + n.toLocaleString('en-IN'); }
+
+function renderProducts(list){
+  const row = document.getElementById('productsRow');
+  row.innerHTML = '';
+  list.forEach(p => {
+    const col = document.createElement('div');
+    col.className = 'col-lg-4 col-md-6';
+    col.innerHTML = `
+      <div class="card h-100 shadow-sm">
+        <img src="${p.image}" class="card-img-top product-img" alt="${p.name}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${p.name}</h5>
+          <p class="card-text text-muted">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</p>
+          <div class="mb-2">
+            <label class="form-label">Variant</label>
+            <select class="form-select variant-select">
+              ${p.variants.map(v=>`<option value="${v.key}" data-price="${v.price}">${v.label} - ${formatINR(v.price)}</option>`).join('')}
+            </select>
+          </div>
+          <div class="mb-2 d-flex align-items-center">
+            <label class="me-2 mb-0">Qty</label>
+            <input type="number" class="form-control ms-auto qty-input" value="1" min="1" style="width:90px;">
+          </div>
+          <div class="mt-auto d-grid gap-2">
+            <button class="btn btn-outline-primary add-cart-btn">Add to Cart</button>
+            <button class="btn btn-primary buy-now-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    `;
+    // actions
+    col.querySelector('.add-cart-btn').addEventListener('click', () => {
+      const variantKey = col.querySelector('.variant-select').value;
+      const qty = parseInt(col.querySelector('.qty-input').value || '1', 10);
+      addToCart(p.id, variantKey, qty);
+      const bs = new bootstrap.Toast(document.createElement('div')); // silent
+      updateCartUI();
+    });
+    col.querySelector('.buy-now-btn').addEventListener('click', () => {
+      const variantSelect = col.querySelector('.variant-select');
+      const variantKey = variantSelect.value;
+      const variantPrice = parseFloat(variantSelect.selectedOptions[0].dataset.price || 0);
+      const qty = parseInt(col.querySelector('.qty-input').value || '1', 10);
+      // Open product paymentLink with quantity appended as query (placeholder). Replace with your real payment integration.
+      const link = p.paymentLink + '?qty=' + qty + '&variant=' + encodeURIComponent(variantKey);
+      window.open(link, '_blank');
+    });
+
+    row.appendChild(col);
+  });
+}
+
+function addToCart(productId, variantKey, qty){
+  qty = Number(qty);
+  const itemIndex = cart.findIndex(it => it.productId === productId && it.variantKey === variantKey);
+  if(itemIndex > -1) cart[itemIndex].qty += qty;
+  else cart.push({ productId, variantKey, qty });
+  saveCart();
+}
+
+function removeFromCart(index){ cart.splice(index,1); saveCart(); }
+function updateQtyInCart(index, qty){ if(qty<1) qty=1; cart[index].qty = Number(qty); saveCart(); }
+
+function updateCartUI(){
+  document.getElementById('cartCount').textContent = cart.reduce((s,i)=>s+i.qty,0);
+  const container = document.getElementById('cartItems');
+  if(!container) return;
+  container.innerHTML = '';
+  let total = 0;
+  if(cart.length === 0){ container.innerHTML = '<p class="text-muted">Your cart is empty.</p>'; }
+  cart.forEach((it, idx) => {
+    const prod = PRODUCTS.find(p=>p.id===it.productId);
+    const variant = prod.variants.find(v=>v.key===it.variantKey) || prod.variants[0];
+    const lineTotal = variant.price * it.qty;
+    total += lineTotal;
+    const row = document.createElement('div');
+    row.className = 'd-flex align-items-center mb-3';
+    row.innerHTML = `
+      <img src="${prod.image}" style="width:80px;height:60px;object-fit:cover;border-radius:6px;margin-right:12px;">
+      <div class="flex-grow-1">
+        <strong>${prod.name}</strong><div class="text-muted small">${variant.label} — ${formatINR(variant.price)}</div>
+      </div>
+      <div class="text-end">
+        <input type="number" class="form-control cart-item-qty mb-1" value="${it.qty}" min="1" data-idx="${idx}">
+        <div class="small text-muted">${formatINR(lineTotal)}</div>
+        <button class="btn btn-link text-danger btn-sm remove-item" data-idx="${idx}">Remove</button>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+  document.getElementById('cartTotal').textContent = formatINR(total);
+  // bind qty & remove handlers
+  document.querySelectorAll('.cart-item-qty').forEach(input => {
+    input.addEventListener('change', e => updateQtyInCart(e.target.dataset.idx, e.target.value));
+  });
+  document.querySelectorAll('.remove-item').forEach(btn => {
+    btn.addEventListener('click', e => removeFromCart(Number(e.target.dataset.idx)));
+  });
+}
+
+document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+function applyFilters(){
+  const cat = document.getElementById('categoryFilter').value;
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const filtered = PRODUCTS.filter(p => {
+    if(cat !== 'all' && p.category !== cat) return false;
+    if(q && !(p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q))) return false;
+    return true;
+  });
+  renderProducts(filtered);
+}
+
+// Clear cart
+document.getElementById('clearCartBtn').addEventListener('click', () => { cart = []; saveCart(); });
+
+// Checkout via email: prefill order to support@hbeei.com
+document.getElementById('checkoutMailBtn').addEventListener('click', () => {
+  if(cart.length === 0){ alert('Cart is empty'); return; }
+  const lines = cart.map(it => {
+    const prod = PRODUCTS.find(p=>p.id===it.productId);
+    const variant = prod.variants.find(v=>v.key===it.variantKey) || prod.variants[0];
+    return `${prod.name} — ${variant.label} — Qty: ${it.qty} — Price each: ${formatINR(variant.price)}`;
+  });
+  const total = cart.reduce((sum,it) => {
+    const prod = PRODUCTS.find(p=>p.id===it.productId);
+    const variant = prod.variants.find(v=>v.key===it.variantKey) || prod.variants[0];
+    return sum + variant.price*it.qty;
+  },0);
+  const body = encodeURIComponent('Order details:%0A' + lines.join('%0A') + '%0A%0ATotal: ' + formatINR(total) + '%0A%0APlease send payment link and shipping options.%0A%0AName:%0APhone:%0AAddress:%0A');
+  window.location.href = `mailto:support@hbeei.com?subject=Store Order&body=${body}`;
+});
+
+// Checkout link: Redirect to a simple payment aggregator (placeholder) — you should replace with your real checkout integration
+document.getElementById('checkoutLinkBtn').addEventListener('click', () => {
+  if(cart.length === 0){ alert('Cart is empty'); return; }
+  // build a summary to pass to your backend/payment gateway
+  const summary = cart.map(it => {
+    const prod = PRODUCTS.find(p=>p.id===it.productId);
+    const variant = prod.variants.find(v=>v.key===it.variantKey) || prod.variants[0];
+    return `${prod.id}:${variant.key}:${it.qty}`;
+  }).join(',');
+  // This URL is a placeholder: replace with your server endpoint that creates a payment session
+  const url = '/create-checkout-session?items=' + encodeURIComponent(summary);
+  // For now, inform the user — replace with actual redirect when backend available
+  alert('Proceeding to payment — this will redirect to your checkout flow. (placeholder)\n\n' + url);
+  // window.location.href = url;
+});
+
+// init
+renderProducts(PRODUCTS);
+updateCartUI();
+applyFilters();
+
+</script>
 </body>
 </html>
