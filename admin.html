@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HBEE — Store Admin</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .variant-row { gap:8px; }
+    .product-card { border:1px solid #e9e9e9; padding:12px; border-radius:8px; }
+    .small-muted { font-size:0.9rem; color:#666; }
+  </style>
+</head>
+<body class="p-4">
+  <div class="container">
+    <div class="d-flex align-items-center mb-4">
+      <h2 class="me-auto">Store Admin — Products</h2>
+      <div>
+        <button id="btnExport" class="btn btn-success me-2">Export products.json</button>
+        <label class="btn btn-secondary mb-0">
+          Import JSON <input id="fileImport" type="file" accept="application/json" hidden>
+        </label>
+        <a href="store.html" class="btn btn-outline-primary ms-2">Open Store</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="product-card">
+          <h5 id="formTitle">Add New Product</h5>
+          <div class="mb-2">
+            <label class="form-label">ID (unique)</label>
+            <input id="pId" class="form-control" placeholder="e.g. mango-01">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Name</label>
+            <input id="pName" class="form-control" placeholder="Organic Mango (Premium)">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Category</label>
+            <input id="pCategory" class="form-control" placeholder="seeds">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Image URL</label>
+            <input id="pImage" class="form-control" placeholder="https://.../mango.jpg">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Payment Link (optional)</label>
+            <input id="pPayment" class="form-control" placeholder="https://buy.stripe.com/..">
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Variants</label>
+            <div id="variantsContainer"></div>
+            <button id="addVariantBtn" class="btn btn-sm btn-outline-secondary mt-2">+ Add variant</button>
+          </div>
+
+          <div class="d-flex mt-3">
+            <button id="saveProductBtn" class="btn btn-primary me-2">Save Product</button>
+            <button id="resetFormBtn" class="btn btn-outline-secondary">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="mb-3">
+          <input id="searchAdmin" class="form-control" placeholder="Search products...">
+        </div>
+        <div id="productsList" class="row g-3"></div>
+      </div>
+    </div>
+
+    <hr class="my-4">
+    <div class="small-muted">Note: Use Export to download a `products.json` file ready to upload to your site root. Import allows you to load an existing JSON. This admin stores nothing on the server.</div>
+  </div>
+
+  <script>
+    // Admin: client-side CRUD and import/export for products.json
+    let products = [];
+
+    // DOM refs
+    const variantsContainer = document.getElementById('variantsContainer');
+    const addVariantBtn = document.getElementById('addVariantBtn');
+    const saveProductBtn = document.getElementById('saveProductBtn');
+    const resetFormBtn = document.getElementById('resetFormBtn');
+    const productsList = document.getElementById('productsList');
+    const fileImport = document.getElementById('fileImport');
+    const btnExport = document.getElementById('btnExport');
+    const searchAdmin = document.getElementById('searchAdmin');
+
+    // form fields
+    const pId = document.getElementById('pId');
+    const pName = document.getElementById('pName');
+    const pCategory = document.getElementById('pCategory');
+    const pImage = document.getElementById('pImage');
+    const pPayment = document.getElementById('pPayment');
+    const formTitle = document.getElementById('formTitle');
+
+    let editingIndex = -1;
+
+    function createVariantRow(v){
+      const div = document.createElement('div');
+      div.className = 'd-flex variant-row';
+      div.innerHTML = `
+        <input class="form-control form-control-sm me-2 v-key" placeholder="key (50kg)">
+        <input class="form-control form-control-sm me-2 v-label" placeholder="label (50 kg)">
+        <input class="form-control form-control-sm me-2 v-price" placeholder="price (number)" type="number" min="0">
+        <button class="btn btn-sm btn-danger v-remove">Remove</button>
+      `;
+      div.querySelector('.v-remove').addEventListener('click', ()=>div.remove());
+      if(v){
+        div.querySelector('.v-key').value = v.key || '';
+        div.querySelector('.v-label').value = v.label || '';
+        div.querySelector('.v-price').value = v.price || '';
+      }
+      variantsContainer.appendChild(div);
+      return div;
+    }
+
+    addVariantBtn.addEventListener('click', (e)=>{ e.preventDefault(); createVariantRow(); });
+
+    function resetForm(){
+      editingIndex = -1;
+      formTitle.textContent = 'Add New Product';
+      pId.value = '';
+      pName.value = '';
+      pCategory.value = '';
+      pImage.value = '';
+      pPayment.value = '';
+      variantsContainer.innerHTML = '';
+      createVariantRow();
+    }
+
+    function gatherVariants(){
+      const rows = Array.from(variantsContainer.children);
+      const out = [];
+      for(const r of rows){
+        const k = r.querySelector('.v-key').value.trim();
+        const label = r.querySelector('.v-label').value.trim();
+        const price = Number(r.querySelector('.v-price').value || 0);
+        if(k && label){ out.push({ key:k, label: label, price: price }); }
+      }
+      return out;
+    }
+
+    saveProductBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = pId.value.trim();
+      const name = pName.value.trim();
+      const category = pCategory.value.trim() || 'uncategorized';
+      const image = pImage.value.trim();
+      const paymentLink = pPayment.value.trim();
+      const variants = gatherVariants();
+      if(!id || !name){ alert('Please provide at least ID and Name'); return; }
+      const product = { id, name, category, image, variants, paymentLink };
+      // ensure unique id
+      if(editingIndex === -1){
+        if(products.find(p=>p.id===id)){ alert('ID already exists. Choose a unique id or edit the existing product.'); return; }
+        products.push(product);
+      } else {
+        // if id changed, ensure uniqueness
+        if(products.some((p,idx)=>p.id===id && idx!==editingIndex)){ alert('ID already exists.'); return; }
+        products[editingIndex] = product;
+      }
+      renderProductsList();
+      resetForm();
+    });
+
+    resetFormBtn.addEventListener('click', (e)=>{ e.preventDefault(); resetForm(); });
+
+    function renderProductsList(filter){
+      productsList.innerHTML = '';
+      const q = (filter || '').toLowerCase();
+      products.forEach((p, idx) => {
+        if(q && !(p.name.toLowerCase().includes(q) || p.id.toLowerCase().includes(q) || (p.category||'').toLowerCase().includes(q))) return;
+        const col = document.createElement('div');
+        col.className = 'col-12';
+        col.innerHTML = `
+          <div class="d-flex align-items-center p-2" style="border:1px solid #eee;border-radius:8px;">
+            <img src="${p.image || 'img/HB logo and Line.png'}" style="width:96px;height:64px;object-fit:cover;border-radius:6px;margin-right:12px;">
+            <div class="flex-grow-1">
+              <strong>${p.name}</strong> <div class="small-muted">ID: ${p.id} • ${p.category}</div>
+              <div class="small-muted">Variants: ${p.variants.map(v=>v.label+' ('+v.price+')').join(', ')}</div>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-sm btn-outline-secondary me-2 edit-btn">Edit</button>
+              <button class="btn btn-sm btn-danger delete-btn">Delete</button>
+            </div>
+          </div>
+        `;
+        col.querySelector('.edit-btn').addEventListener('click', ()=>{
+          loadProductIntoForm(idx);
+        });
+        col.querySelector('.delete-btn').addEventListener('click', ()=>{
+          if(confirm('Delete this product?')){ products.splice(idx,1); renderProductsList(); }
+        });
+        productsList.appendChild(col);
+      });
+    }
+
+    function loadProductIntoForm(idx){
+      const p = products[idx];
+      editingIndex = idx;
+      formTitle.textContent = 'Edit Product';
+      pId.value = p.id;
+      pName.value = p.name;
+      pCategory.value = p.category;
+      pImage.value = p.image || '';
+      pPayment.value = p.paymentLink || '';
+      variantsContainer.innerHTML = '';
+      (p.variants || []).forEach(v=>createVariantRow(v));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Export
+    btnExport.addEventListener('click', ()=>{
+      if(products.length === 0){ if(!confirm('No products to export. Export empty array?')) return; }
+      const blob = new Blob([JSON.stringify(products, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'products.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Import file
+    fileImport.addEventListener('change', (e)=>{
+      const f = e.target.files && e.target.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try{
+          const data = JSON.parse(reader.result);
+          if(!Array.isArray(data)){ alert('Invalid format: JSON root must be an array'); return; }
+          products = data;
+          renderProductsList();
+          resetForm();
+          alert('Imported ' + products.length + ' products. Remember to Export to download a file for upload.');
+        }catch(err){ alert('Error parsing JSON: ' + err.message); }
+      };
+      reader.readAsText(f);
+      // clear input so same file can be selected again if needed
+      e.target.value = '';
+    });
+
+    // Attempt to load existing /products.json on init (optional)
+    async function tryLoadRemote(){
+      try{
+        const r = await fetch('/products.json', { cache: 'no-store' });
+        if(r.ok){
+          const data = await r.json();
+          if(Array.isArray(data)){
+            products = data;
+            renderProductsList();
+            return;
+          }
+        }
+      }catch(e){ /* ignore */ }
+      // empty initial state
+      products = [];
+      renderProductsList();
+      resetForm();
+    }
+
+    searchAdmin.addEventListener('input', ()=> renderProductsList(searchAdmin.value.trim()));
+
+    // init
+    tryLoadRemote();
+
+  </script>
+</body>
+</html>

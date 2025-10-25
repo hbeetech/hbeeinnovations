@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-4 text-end"><p class="mb-0">Mon - Fri, 9:30 - 18:30</p></div>
                 <div class="col-4 text-end"><p class="mb-0"><a href="tel:+918310099233">+91 83100 99233</a></p></div>
-                <div class="col-4 text-end"><p class="mb-0"><a href="mailto:support@hbeei.com">support@hbeei.com</a></p></div>
+                <div class="col-4 text-end"><p class="mb-0"><a href="mailto:admin@hbeei.com">admin@hbeei.com</a></p></div>
             </div>
         </div>
     </div>
@@ -161,19 +161,20 @@
 <script>
 /*
   Simple e‑commerce front-end:
-  - Products defined below (id, name, category, variants, price, image, paymentLink)
+  - Products are loaded from /products.json when available; otherwise the built-in fallback list is used.
   - Add to cart, cart persistence (localStorage), search & filter
   - Buy Now opens product.paymentLink (placeholder). Checkout via email composes order to support@hbeei.com
 */
 
-const PRODUCTS = [
+let PRODUCTS = [];
+const PRODUCTS_FALLBACK = [
   {
     id: 'fert-01',
     name: 'NPK Granules 20-20-20',
     category: 'fertilizer',
     image: 'https://images.unsplash.com/photo-1587560699334-6b0b1f0e6f02?auto=format&fit=crop&w=800&q=80',
     variants: [{key:'50kg', label:'50 kg', price: 2000},{key:'25kg', label:'25 kg', price: 1050}],
-    paymentLink: 'https://buy.stripe.com/test_fert01' // placeholder
+    paymentLink: 'https://buy.stripe.com/test_fert01'
   },
   {
     id: 'pest-01',
@@ -208,6 +209,22 @@ const PRODUCTS = [
     paymentLink: 'https://buy.stripe.com/test_mango01'
   }
 ];
+
+async function loadProducts(){
+  try{
+    const resp = await fetch('/products.json', {cache: 'no-store'});
+    if(resp.ok){
+      PRODUCTS = await resp.json();
+    } else {
+      PRODUCTS = PRODUCTS_FALLBACK.slice();
+    }
+  }catch(e){
+    PRODUCTS = PRODUCTS_FALLBACK.slice();
+  }
+  renderProducts(PRODUCTS);
+  updateCartUI();
+  applyFilters();
+}
 
 const CART_KEY = 'hbeei_cart_v1';
 let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
@@ -345,7 +362,7 @@ document.getElementById('checkoutMailBtn').addEventListener('click', () => {
     return sum + variant.price*it.qty;
   },0);
   const body = encodeURIComponent('Order details:%0A' + lines.join('%0A') + '%0A%0ATotal: ' + formatINR(total) + '%0A%0APlease send payment link and shipping options.%0A%0AName:%0APhone:%0AAddress:%0A');
-  window.location.href = `mailto:support@hbeei.com?subject=Store Order&body=${body}`;
+  window.location.href = `mailto:admin@hbeei.com?subject=Store Order&body=${body}`;
 });
 
 // Checkout link: Redirect to a simple payment aggregator (placeholder) — you should replace with your real checkout integration
@@ -364,10 +381,8 @@ document.getElementById('checkoutLinkBtn').addEventListener('click', () => {
   // window.location.href = url;
 });
 
-// init
-renderProducts(PRODUCTS);
-updateCartUI();
-applyFilters();
+// init: load products (from /products.json when present) then initialize UI
+loadProducts();
 
 </script>
 </body>

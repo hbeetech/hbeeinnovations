@@ -1,0 +1,68 @@
+[
+  {
+    "id": "mango-01",
+    "name": "Organic Mango (Premium)",
+    "category": "fruits",
+    "image": "img/Mango.png",
+    "variants": [
+      {
+        "key": "1kg",
+        "label": "1 kg",
+        "price": 180
+      },
+      {
+        "key": "2kg",
+        "label": "2 kg",
+        "price": 340
+      }
+    ],
+    "paymentLink": "https://buy.stripe.com/test_mango01"
+  },
+  {
+    "id": "seed-01",
+    "name": "Hybrid Maize Seeds (1kg)",
+    "category": "seeds",
+    "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+    "variants": [
+      {
+        "key": "1kg",
+        "label": "1 kg",
+        "price": 420
+      }
+    ],
+    "paymentLink": "https://buy.stripe.com/test_seed01"
+  },
+  {
+    "id": "fert-01",
+    "name": "NPK Granules 20-20-20 (50kg)",
+    "category": "fertilizer",
+    "image": "https://images.unsplash.com/photo-1587560699334-6b0b1f0e6f02?auto=format&fit=crop&w=800&q=80",
+    "variants": [
+      {
+        "key": "50kg",
+        "label": "50 kg",
+        "price": 2000
+      }
+    ],
+    "paymentLink": "https://buy.stripe.com/test_fert01"
+  },
+  {
+    "id": "M1",
+    "name": "Mango",
+    "category": "Fruit",
+    "image": "",
+    "variants": [
+      {
+        "key": "5",
+        "label": "5",
+        "price": 500
+      },
+      {
+        "key": "10",
+        "label": "10",
+        "price": 1000
+      }
+    ],
+    "paymentLink": ""
+  }
+]
